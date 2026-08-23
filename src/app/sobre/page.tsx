@@ -19,7 +19,7 @@ export default function SobrePage() {
               tapete, tapeçaria e objeto — sempre peça única, sempre pensada fio por fio.
             </p>
             <p className="mt-4 max-w-measure text-base leading-relaxed text-bone/50">
-              [Placeholder — completar com a história real: desde quando trabalha com tufting/punch needle,
+              [Placeholder — quim quim quimcompletar com a historia real: desde quando trabalha com tufting/punch needle,
               o que fazia antes, e o que despertou o interesse pela técnica.]
             </p>
           </div>
