@@ -5,28 +5,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Paleta oficial Tuft Uzume — extraída de "paleta de cores" (fornecida pela marca).
+        // Base: azul-petróleo (1D6A75) e creme (F2DFD1). Acentos: rosa (DB758C),
+        // areia (E0C1AC) e os dois azuis claros (8FB1F2 / B3CCFD).
         ink: {
-          DEFAULT: "#0F0D0B",
-          soft: "#1B1815",
-          line: "#332E29",
+          DEFAULT: "#1D6A75",
+          soft: "#1D6A75",
+          line: "#1D6A75",
         },
         bone: {
-          DEFAULT: "#F1E7D6",
-          dim: "#E4D6BE",
-          text: "#211B12",
+          DEFAULT: "#F2DFD1",
+          dim: "#E0C1AC",
+          text: "#1D6A75",
         },
         red: {
-          DEFAULT: "#C81B25",
-          soft: "#E23A3A",
-          deep: "#8B1219",
+          DEFAULT: "#DB758C",
+          soft: "#F2DFD1",
+          deep: "#E0C1AC",
         },
         gold: {
-          DEFAULT: "#E7AC1F",
-          soft: "#F4CE6B",
+          DEFAULT: "#E0C1AC",
+          soft: "#F2DFD1",
         },
         thread: {
-          DEFAULT: "#7C93D8",
-          soft: "#AFC0EA",
+          DEFAULT: "#B3CCFD",
+          soft: "#8FB1F2",
         },
       },
       fontFamily: {

@@ -1,11 +1,21 @@
 import type { Metadata } from "next";
-import { Anton, Archivo, Space_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Archivo, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { site } from "@/data/site";
 
-const display = Anton({ subsets: ["latin"], weight: "400", variable: "--font-display" });
+// Bootzy TM — fonte de marca da Tuft Uzume, usada em títulos e destaques.
+const display = localFont({
+  src: [
+    { path: "./fonts/BootzyTM.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/BootzyTM.woff", weight: "400", style: "normal" },
+  ],
+  variable: "--font-display",
+  display: "swap",
+});
+// Archivo segue como fonte complementar, para textos longos e legibilidade.
 const body = Archivo({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-body" });
 const mono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-mono" });
 

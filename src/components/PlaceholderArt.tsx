@@ -75,6 +75,35 @@ const icons: Record<Motif, JSX.Element> = {
       <line x1="79" y1="21" x2="21" y2="79" />
     </g>
   ),
+  croissant: (
+    <g fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 58 C 18 30, 45 12, 70 18 C 92 23, 94 46, 80 58 C 92 62, 90 78, 74 78 C 60 78, 55 66, 42 66 C 30 66, 24 80, 12 74 C 4 70, 6 60, 12 58 Z" />
+      <path d="M32 40 L 42 50 M44 32 L 54 44 M56 28 L 66 40" opacity=".6" />
+    </g>
+  ),
+  chaveiro: (
+    <g fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M38 20 C 34 8, 44 4, 46 16 C 48 6, 58 8, 54 20" />
+      <circle cx="50" cy="46" r="30" />
+      <circle cx="40" cy="42" r="3" fill="currentColor" stroke="none" />
+      <circle cx="60" cy="42" r="3" fill="currentColor" stroke="none" />
+      <path d="M44 56 Q 50 60 56 56" />
+      <circle cx="82" cy="16" r="8" />
+      <line x1="76" y1="22" x2="62" y2="34" />
+    </g>
+  ),
+  collab: (
+    <g fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="38" cy="52" r="28" />
+      <circle cx="66" cy="46" r="24" />
+      <circle cx="31" cy="48" r="3" fill="currentColor" stroke="none" />
+      <circle cx="45" cy="48" r="3" fill="currentColor" stroke="none" />
+      <circle cx="59" cy="42" r="3" fill="currentColor" stroke="none" />
+      <circle cx="73" cy="42" r="3" fill="currentColor" stroke="none" />
+      <path d="M32 62 Q 38 68 44 62" />
+      <path d="M60 56 Q 66 60 72 56" />
+    </g>
+  ),
 };
 
 const labels: Record<Motif, string> = {
@@ -86,6 +115,9 @@ const labels: Record<Motif, string> = {
   peixe: "peixe",
   flor: "flor",
   teia: "teia",
+  croissant: "croissant",
+  chaveiro: "chaveiro",
+  collab: "collab",
 };
 
 export function PlaceholderArt({

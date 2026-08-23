@@ -3,10 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProduct, products } from "@/data/products";
 import { PlaceholderArt } from "@/components/PlaceholderArt";
+import { ProductImage } from "@/components/ProductImage";
 import { StatusPill } from "@/components/StatusPill";
 import { LinkButton } from "@/components/Button";
 import { ProductCard } from "@/components/ProductCard";
-import { formatBRL } from "@/lib/utils";
+import { formatBRL, formatStock } from "@/lib/utils";
 import { site, whatsappLink } from "@/data/site";
 
 export function generateStaticParams() {
@@ -39,9 +40,28 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
         <div className="mt-6 grid gap-10 lg:grid-cols-2">
           <div className="grid grid-cols-2 gap-4">
-            <PlaceholderArt motif={product.motif} tone="bone" ratio="aspect-square" className="col-span-2" />
-            <PlaceholderArt motif={product.motif} tone="ink" ratio="aspect-square" />
-            <PlaceholderArt motif={product.motif} tone="bone" ratio="aspect-square" />
+            {product.images && product.images.length > 0 ? (
+              <>
+                <ProductImage
+                  src={product.images[0]}
+                  alt={product.name}
+                  ratio="aspect-square"
+                  className="col-span-2"
+                />
+                {product.images.slice(1, 3).map((src) => (
+                  <ProductImage key={src} src={src} alt={product.name} ratio="aspect-square" />
+                ))}
+                {product.images.length === 1 && (
+                  <PlaceholderArt motif={product.motif} tone="ink" ratio="aspect-square" />
+                )}
+              </>
+            ) : (
+              <>
+                <PlaceholderArt motif={product.motif} tone="bone" ratio="aspect-square" className="col-span-2" />
+                <PlaceholderArt motif={product.motif} tone="ink" ratio="aspect-square" />
+                <PlaceholderArt motif={product.motif} tone="bone" ratio="aspect-square" />
+              </>
+            )}
           </div>
 
           <div>
@@ -61,6 +81,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <dd className="text-bone">{product.sizeCm}</dd>
               <dt className="text-bone/40">Materiais</dt>
               <dd className="text-bone">{product.materials}</dd>
+              <dt className="text-bone/40">Estoque</dt>
+              <dd className="text-bone">{formatStock(product.stock)}</dd>
+              {product.variations && (
+                <>
+                  <dt className="text-bone/40">Variações</dt>
+                  <dd className="text-bone">{product.variations.join(" e ")}</dd>
+                </>
+              )}
             </dl>
 
             <div className="mt-8 flex flex-wrap gap-4">

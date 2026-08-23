@@ -9,8 +9,7 @@ export const site = {
   description:
     "Tapetes, tapeçarias e peças têxteis autorais em tufting e punch needle, feitas à mão em Florianópolis por Quim.",
 
-  // TODO: confirmar número oficial de WhatsApp (com DDI+DDD, só dígitos).
-  whatsappNumber: "5548900000000",
+  whatsappUrl: "https://wa.me/qr/WTKWZQGFOW2TC1",
 
   // TODO: confirmar e-mail oficial de contato.
   email: "contato@tuftuzume.com.br",
@@ -29,5 +28,5 @@ export const site = {
 
 export function whatsappLink(message: string) {
   const encoded = encodeURIComponent(message);
-  return `https://wa.me/${site.whatsappNumber}?text=${encoded}`;
+  return `${site.whatsappUrl}?text=${encoded}`;
 }
